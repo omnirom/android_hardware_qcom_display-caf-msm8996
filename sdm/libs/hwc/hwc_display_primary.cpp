@@ -117,13 +117,13 @@ void HWCDisplayPrimary::ProcessBootAnimCompleted(hwc_display_contents_1_t *list)
   bool isEncrypted = false;
   bool main_class_services_started = false;
   if (property_get("ro.crypto.state", cryptoState, "unencrypted")) {
-    DLOGI("%s: cryptostate= %s", __FUNCTION__, cryptoState);
+    DLOGV("%s: cryptostate= %s", __FUNCTION__, cryptoState);
     if (!strcmp(cryptoState, "encrypted")) {
       isEncrypted = true;
       if (property_get("vold.decrypt", voldDecryptState, "") &&
             !strcmp(voldDecryptState, "trigger_restart_framework"))
         main_class_services_started = true;
-      DLOGI("%s: vold= %s", __FUNCTION__, voldDecryptState);
+      DLOGV("%s: vold= %s", __FUNCTION__, voldDecryptState);
     }
   }
   if ((!isEncrypted ||(isEncrypted && main_class_services_started)) &&
@@ -288,7 +288,7 @@ void HWCDisplayPrimary::ToggleCPUHint(bool set) {
 void HWCDisplayPrimary::SetSecureDisplay(bool secure_display_active) {
   if (secure_display_active_ != secure_display_active) {
     // Skip Prepare and call Flush for null commit
-    DLOGI("SecureDisplay state changed from %d to %d Needs Flush!!", secure_display_active_,
+    DLOGV("SecureDisplay state changed from %d to %d Needs Flush!!", secure_display_active_,
            secure_display_active);
     secure_display_active_ = secure_display_active;
     skip_prepare_ = true;
