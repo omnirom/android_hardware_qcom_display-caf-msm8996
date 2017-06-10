@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "638068a9_56449e3e",
+        "filename": "sdm/libs/core/display_primary.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 1000026
+      },
+      "writtenOn": "2017-06-10T01:01:45Z",
+      "side": 1,
+      "message": "looks like its based on this",
+      "revId": "2546518b1427c2dfcaf5a6a039f644ae587289be",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    }
+  ]
+}
