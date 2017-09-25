@@ -251,8 +251,10 @@ class DisplayEventHandler {
   */
   virtual DisplayError CECMessage(char *message) = 0;
 
+#ifdef USE_HWC2
   /*! @brief Event handler for events received by Display HAL. */
   virtual DisplayError HandleEvent(DisplayEvent event) = 0;
+#endif
 
  protected:
   virtual ~DisplayEventHandler() { }
