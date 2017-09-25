@@ -269,13 +269,17 @@ DisplayError DisplayPrimary::VSync(int64_t timestamp) {
 void DisplayPrimary::IdleTimeout() {
   event_handler_->Refresh();
   comp_manager_->ProcessIdleTimeout(display_comp_ctx_);
+#ifdef USE_HWC2
   event_handler_->HandleEvent(kIdleTimeout);
+#endif
 }
 
 void DisplayPrimary::ThermalEvent(int64_t thermal_level) {
   lock_guard<recursive_mutex> obj(recursive_mutex_);
   comp_manager_->ProcessThermalEvent(display_comp_ctx_, thermal_level);
+#ifdef USE_HWC2
   event_handler_->HandleEvent(kThermalEvent);
+#endif
 }
 
 void DisplayPrimary::IdlePowerCollapse() {
