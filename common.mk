@@ -14,7 +14,7 @@ ifeq ($(TARGET_USES_COLOR_METADATA), true)
 endif
 
 ifeq ($(TARGET_USES_QCOM_BSP),true)
-    common_flags += -DQTI_BSP
+    common_flags += -DQTI_BSP -DUSES_DIM_LAYER_COLOR
 endif
 
 ifeq ($(ARCH_ARM_HAVE_NEON),true)
@@ -29,6 +29,7 @@ use_hwc2 := false
 ifeq ($(TARGET_USES_HWC2), true)
     use_hwc2 := true
     common_flags += -DVIDEO_MODE_DEFER_RETIRE_FENCE
+    common_flags += -DUSE_HWC2
 endif
 
 ifeq ($(TARGET_USES_GRALLOC1), true)

@@ -32,6 +32,7 @@ LOCAL_SHARED_LIBRARIES        := $(common_libs) libdl libmemalloc
 LOCAL_CFLAGS                  := $(common_flags) -DLOG_TAG=\"qdcopybit\" -Wno-sign-conversion
 LOCAL_ADDITIONAL_DEPENDENCIES := $(common_deps)
 LOCAL_CLANG                   := true
+LOCAL_HEADER_LIBRARIES        := display_headers
 
 ifeq ($(TARGET_USES_C2D_COMPOSITION),true)
     LOCAL_CFLAGS += -DCOPYBIT_Z180=1 -DC2D_SUPPORT_DISPLAY=1
