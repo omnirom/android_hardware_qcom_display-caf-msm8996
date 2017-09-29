@@ -14,7 +14,11 @@ ifeq ($(TARGET_USES_COLOR_METADATA), true)
 endif
 
 ifeq ($(TARGET_USES_QCOM_BSP),true)
-    common_flags += -DQTI_BSP -DUSES_DIM_LAYER_COLOR
+    common_flags += -DQTI_BSP
+endif
+
+ifeq ($(TARGET_USES_HWC_DIM_LAYER_COLOR),true)
+    common_flags += -DUSE_HWC_DIM_LAYER_COLOR
 endif
 
 ifeq ($(ARCH_ARM_HAVE_NEON),true)
