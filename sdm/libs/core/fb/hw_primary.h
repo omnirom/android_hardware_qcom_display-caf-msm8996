@@ -60,8 +60,6 @@ class HWPrimary : public HWDevice {
   virtual DisplayError GetPanelBrightness(int *level);
   virtual DisplayError SetAutoRefresh(bool enable);
   virtual DisplayError SetMixerAttributes(const HWMixerAttributes &mixer_attributes);
-  virtual DisplayError SetDynamicDSIClock(uint64_t bitclk);
-  virtual DisplayError GetDynamicDSIClock(uint64_t *bitclk);
 
  private:
   // Panel modes for the MSMFB_LPM_ENABLE ioctl
